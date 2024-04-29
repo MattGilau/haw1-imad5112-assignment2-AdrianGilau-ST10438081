@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">myTamagotchiApp</string>
+    <string name="starting_message">Starting...</string>
+    <string name="meet_mila_your_tamagotchi_app">Meet Mila! Your Tamagotchi App</string>
+    <string name="Start_Btn">CLICK TO START!</string>
+    <string name="pet_view1">Pet view1</string>
+</resources>
