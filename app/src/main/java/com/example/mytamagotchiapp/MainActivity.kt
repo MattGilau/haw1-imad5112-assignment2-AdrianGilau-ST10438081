@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
             /* Display a short duration pop-up msg to indicate the button is clicked and the
                MainActivityTamagotchi is being started */
-            Toast.makeText(this, R.string.starting_message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.starting_message, Toast.LENGTH_LONG).show()
             // Externalise text string to string resources for good practise
 
             //Explicit intent to specify the MainActivityTamagotchi class should be started

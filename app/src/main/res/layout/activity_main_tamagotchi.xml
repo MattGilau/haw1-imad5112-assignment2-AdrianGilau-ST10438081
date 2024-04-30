@@ -7,4 +7,232 @@
     android:background="@drawable/pb3"
     tools:context=".MainActivityTamagotchi">
 
+    <Button
+        android:id="@+id/feedBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="34dp"
+        android:backgroundTint="@android:color/holo_blue_bright"
+        android:fontFamily="@font/baloo"
+        android:text="@string/feedButton"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/virtualPet" />
+
+    <Button
+        android:id="@+id/cleanBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="57dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:fontFamily="@font/baloo"
+        android:text="@string/cleanButton"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/playBtn"
+        app:layout_constraintStart_toEndOf="@+id/feedBtn"
+        app:layout_constraintTop_toBottomOf="@+id/virtualPet" />
+
+    <Button
+        android:id="@+id/playBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:fontFamily="@font/baloo"
+        android:text="@string/playButton"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/virtualPet" />
+
+    <ProgressBar
+        android:id="@+id/hungerPB"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:progressTint="@android:color/holo_blue_bright"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hungerTxt" />
+
+    <ProgressBar
+        android:id="@+id/cleanPB"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:progressTint="@android:color/holo_orange_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cleanTxt" />
+
+    <ProgressBar
+        android:id="@+id/playPB"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:progressTint="@android:color/holo_red_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playTxt" />
+
+    <TextView
+        android:id="@+id/hungerLabel"
+        android:layout_width="87dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/holo_blue_bright"
+        android:fontFamily="@font/baloo"
+        android:text="@string/hungerLabel"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feedBtn"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/cleanLabel"
+        android:layout_width="87dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/holo_orange_dark"
+        android:fontFamily="@font/baloo"
+        android:text="@string/cleanlinessLabel"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hungerLabel"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/happyLabel"
+        android:layout_width="87dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/holo_red_light"
+        android:fontFamily="@font/baloo"
+        android:text="@string/happinessLabel"
+        android:textAlignment="center"
+        android:textColor="#212121"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cleanLabel"
+        tools:ignore="TextSizeCheck" />
+
+    <ImageView
+        android:id="@+id/virtualPet"
+        android:layout_width="307dp"
+        android:layout_height="343dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="51dp"
+        android:contentDescription="@string/virtualPetScreen2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/milawel" />
+
+    <TextView
+        android:id="@+id/hungerTxt"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="58dp"
+        android:background="@android:color/holo_blue_bright"
+        android:fontFamily="@font/baloo"
+        android:text="@string/hungerTextView"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playBtn"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/cleanTxt"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="58dp"
+        android:background="@android:color/holo_orange_dark"
+        android:fontFamily="@font/baloo"
+        android:text="@string/cleanTextView"
+        android:textAlignment="center"
+        android:textColor="#263238"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hungerPB"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/playTxt"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="58dp"
+        android:background="@android:color/holo_red_light"
+        android:fontFamily="@font/baloo"
+        android:text="@string/playTextView"
+        android:textAlignment="center"
+        android:textColor="#212121"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cleanPB"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/warning1"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/holo_red_dark"
+        android:fontFamily="@font/baloo"
+        android:text="@string/warningMsg"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/hungerLabel"
+        app:layout_constraintTop_toBottomOf="@+id/cleanBtn"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/warning2"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="46dp"
+        android:background="@android:color/holo_red_dark"
+        android:fontFamily="@font/baloo"
+        android:text="@string/warningMsg"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/cleanLabel"
+        app:layout_constraintTop_toBottomOf="@+id/warning1"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/warning3"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="48dp"
+        android:background="@android:color/holo_red_dark"
+        android:fontFamily="@font/baloo"
+        android:text="@string/warningMsg"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/happyLabel"
+        app:layout_constraintTop_toBottomOf="@+id/warning2"
+        tools:ignore="TextSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

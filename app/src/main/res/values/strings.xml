@@ -4,4 +4,18 @@
     <string name="meet_mila_your_tamagotchi_app">Meet Mila! Your Tamagotchi App</string>
     <string name="Start_Btn">CLICK TO START!</string>
     <string name="pet_view1">Pet view1</string>
+    <string name="cleanButton">Clean</string>
+    <string name="cleanTextView">TextView</string>
+    <string name="feedButton">Feed</string>
+    <string name="hungerTextView">TextView</string>
+    <string name="playButton">Play</string>
+    <string name="playTextView">TextView</string>
+    <string name="cleanlinessLabel">Cleanliness</string>
+    <string name="happinessLabel">Happiness</string>
+    <string name="hungerLabel">Hunger</string>
+    <string name="virtualPetScreen2">virtualPetChanging</string>
+    <string name="feedingBtnClicked">Feeding...</string>
+    <string name="cleaningBtnClicked">Cleaning...</string>
+    <string name="playingBtnClicked">Playing...</string>
+    <string name="warningMsg">WARNING!</string>
 </resources>
