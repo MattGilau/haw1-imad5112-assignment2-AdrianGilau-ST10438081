@@ -1,5 +1,6 @@
 package com.example.mytamagotchiapp
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -32,16 +33,24 @@ class MainActivityTamagotchi : AppCompatActivity() {
     var clean = 100
     var happy = 100
 
-    private val handler = Handler(Looper.getMainLooper())
-    private val updateInterval = 5000L
-    private val decreaseAmount = 10
+    val handler = Handler(Looper.getMainLooper())
+    val updateInterval = 5000L
+    val decreaseAmount = 10
 
-    private val decreaseValuesRunnable = object : Runnable{
+    val decreaseValuesRunnable = object : Runnable{
         override fun run() {
             decreaseValues()
             handler.postDelayed(this, updateInterval)
         }
     }
+    val updateWarningsRunnable = object : Runnable {
+        override fun run() {
+            warnings()
+            handler.postDelayed(this, updateInterval)
+        }
+    }
+    var mediaPlayer: MediaPlayer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_tamagotchi)
@@ -65,9 +74,9 @@ class MainActivityTamagotchi : AppCompatActivity() {
         warning3.visibility = View.INVISIBLE
 
         updateValues()
-        warnings()
         // Start periodic update of values
         handler.postDelayed(decreaseValuesRunnable, updateInterval)
+        handler.postDelayed(updateWarningsRunnable, updateInterval)
 
         // Button click listeners
         feedBtn.setOnClickListener {
@@ -75,7 +84,6 @@ class MainActivityTamagotchi : AppCompatActivity() {
                 getString(R.string.feedingBtnClicked), Toast.LENGTH_SHORT).show()
             increaseHunger()
             updateValues()
-            warnings()
         }
 
         cleanBtn.setOnClickListener {
@@ -83,7 +91,6 @@ class MainActivityTamagotchi : AppCompatActivity() {
                 getString(R.string.cleaningBtnClicked), Toast.LENGTH_SHORT).show()
             increaseClean()
             updateValues()
-            warnings()
         }
 
         playBtn.setOnClickListener {
@@ -91,7 +98,6 @@ class MainActivityTamagotchi : AppCompatActivity() {
                 getString(R.string.playingBtnClicked), Toast.LENGTH_SHORT).show()
             increaseHappy()
             updateValues()
-            warnings()
         }
 
     }
@@ -111,15 +117,15 @@ class MainActivityTamagotchi : AppCompatActivity() {
         updateValues()
     }
     fun increaseHunger() {
-        hunger = kotlin.math.min(100, hunger + 10)
+        hunger = kotlin.math.min(100, hunger + 20)
         virtualPet.setImageResource(R.drawable.milafeed)
     }
     fun increaseClean() {
-        clean = kotlin.math.min(100, clean + 10)
+        clean = kotlin.math.min(100, clean + 20)
         virtualPet.setImageResource(R.drawable.milabath)
     }
     fun increaseHappy(){
-        happy = kotlin.math.min(100, happy + 10)
+        happy = kotlin.math.min(100, happy + 20)
         virtualPet.setImageResource(R.drawable.milaplay)
     }
     fun warnings(){
@@ -138,9 +144,18 @@ class MainActivityTamagotchi : AppCompatActivity() {
         } else {
             warning3.visibility = View.INVISIBLE
         }
+        if (hunger <= 30 || clean <= 30 || happy <= 30){
+            bark()
+        }
+    }
+    fun bark(){
+        mediaPlayer?.release()
+        mediaPlayer = MediaPlayer.create(this, R.raw.bark)
+        mediaPlayer?.start()
     }
     override fun onDestroy() {
         super.onDestroy()
+        mediaPlayer?.release()
         // Remove callbacks to avoid memory leaks
         handler.removeCallbacks(decreaseValuesRunnable)
     }
