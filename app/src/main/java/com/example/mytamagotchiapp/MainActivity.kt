@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
             /* Display a short duration pop-up msg to indicate the button is clicked and the
                MainActivityTamagotchi is being started */
-            Toast.makeText(this, R.string.starting_message, Toast.LENGTH_LONG).show()        //IIE, 2024
+            Toast.makeText(this, R.string.starting_message, Toast.LENGTH_LONG).show()                    //IIE, 2024
             // Externalise text string to string resources for good practise
 
             //Explicit intent to specify the MainActivityTamagotchi class should be started
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             and happy dog concept with simple shape. [Online]. Available at:
             https://www.freepik.com/premium-vector/seamless-pattern-cute-dog-puppy-symbol-toy-paw-
             footstep-cartoon-funny-happy-dog-concept-with-simple-shape-style-illustration-background-
-            wallpaper-textile-fabric_11733171.htm [Accessed 23 April 2024]
+            wallpaper-textile-fabric_11733171.htm [Accessed 23 April 2024].
         Meta. (2024). Meta AI (Llama 3 version). [AI Assistant]. Available on WhatsApp [Accessed
             23 April 2024].
         OpenAI. (2024). ChatGPT3.5 (Feb 13 version). [Large language model]. Available at:

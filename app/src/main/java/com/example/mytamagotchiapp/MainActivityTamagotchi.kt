@@ -98,8 +98,8 @@ class MainActivityTamagotchi : AppCompatActivity() {
 
         updateValues()
         // Start periodic update of values
-        handler.postDelayed(decreaseValuesRunnable, updateInterval)                                 //(OpenAI, 2024)
-        handler.postDelayed(updateWarningsRunnable, updateInterval)                                 //(OpenAI, 2024)
+        handler.postDelayed(decreaseValuesRunnable, updateInterval)                                 //(Developers, 2024)
+        handler.postDelayed(updateWarningsRunnable, updateInterval)                                 //(Developers, 2024)
 
         // Button click listeners
         feedBtn.setOnClickListener {                                                         //(IIE, 2024)
@@ -156,7 +156,7 @@ class MainActivityTamagotchi : AppCompatActivity() {
     // Function that increases the hunger status value when feed button clicked
     fun increaseHunger() {                                                                          //(Mhlanga, 2024)
         // Increase the hunger value - capped at 100
-        hunger = kotlin.math.min(100, hunger + 20)                                            //(OpenAI, 2024)
+        hunger = kotlin.math.min(100, hunger + 20)                                            //(Developers, 2024)
         // Change the image
         virtualPet.setImageResource(R.drawable.milafeed)                                            //(OpenAI, 2024)
         Log.d("increaseHunger", "Hunger Increased: $hunger")                               //(OpenAI, 2024)
@@ -164,7 +164,7 @@ class MainActivityTamagotchi : AppCompatActivity() {
     //Function to increase the cleanliness status value when clean button clicked
     fun increaseClean() {                                                                           //(Mhlanga, 2024)
         // Increase the cleanliness value - capped at 100
-        clean = kotlin.math.min(100, clean + 20)                                              //(OpenAI, 2024)
+        clean = kotlin.math.min(100, clean + 20)                                              //(Developers, 2024)
         // Change the image
         virtualPet.setImageResource(R.drawable.milabath)                                            //(OpenAI, 2024)
         Log.d("increaseClean", "Cleanliness Increased: $clean")                            //(OpenAI, 2024)
@@ -172,7 +172,7 @@ class MainActivityTamagotchi : AppCompatActivity() {
     //Function to increase the happiness status value when play button clicked
     fun increaseHappy() {                                                                           //(Mhlanga, 2024)
         // Increase the happiness value - capped at 100
-        happy = kotlin.math.min(100, happy + 20)                                              //(OpenAI, 2024)
+        happy = kotlin.math.min(100, happy + 20)                                              //(Developers, 2024)
         // Change the image
         virtualPet.setImageResource(R.drawable.milaplay)                                            //(OpenAI, 2024)
         Log.d("increaseHappy", "Happiness Increased: $happy")                              //(OpenAI, 2024)
@@ -216,11 +216,15 @@ class MainActivityTamagotchi : AppCompatActivity() {
         Log.d("MainActivityTamagotchi", "Activity destroyed")                              //(OpenAI, 2024)
         mediaPlayer?.release()                                                                      //(LiberatorBuddy, 2024)
         // Remove callbacks to avoid memory leaks
-        handler.removeCallbacks(decreaseValuesRunnable)                                             //(OpenAI, 2024)
-        handler.removeCallbacks(updateWarningsRunnable)                                             //(OpenAI, 2024)
+        handler.removeCallbacks(decreaseValuesRunnable)                                             //(Developers, 2024)
+        handler.removeCallbacks(updateWarningsRunnable)                                             //(Developers, 2024)
     }
     /*  Reference List:
 
+        Developers. 2024. Handler. [Online]. Available At: https://developer.android.com
+            /reference/kotlin/android/os/Handler#postdelayed_1 [Accessed 06 May 2024].
+        Developers. 2024. Math. [Online]. Available At: https://developer.android.com/reference/java
+            /lang/Math#min(float,%20float) [Accessed 06 May 2024].
         How class Handler works Android, Kotlin. 2023. YouTube video, added by Simple Android Apps.
             [Online]. Available at: https://www.youtube.com/watch?v=WwOeoQMhtss [Accessed 29 April
             2024].
